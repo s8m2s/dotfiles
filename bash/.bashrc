@@ -124,18 +124,18 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
-# hide computer name in prompt
-export PS1="\W \$ "
+# prompt with some room
+export PS1="\u@\H:\w\\n\$ "
 
 # run scripts from anyware
 export PATH=$PATH:$HOME/scripts
 
-
 # Git branch in prompt.
-
 parse_git_branch() {
 
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 
 }
+
+export PS1="\u@\H:\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n\$ "
 
