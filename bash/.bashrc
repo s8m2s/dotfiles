@@ -119,6 +119,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Enable colors in bash
 export CLICOLOR=1
@@ -139,3 +142,4 @@ parse_git_branch() {
 
 export PS1="\u@\H:\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n\$ "
 
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
