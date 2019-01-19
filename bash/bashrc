@@ -140,6 +140,6 @@ parse_git_branch() {
 
 }
 
-export PS1="\u@\H:\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n\$ "
+export PS1="\u@\H:\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\$ "
 
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
