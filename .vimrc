@@ -86,3 +86,9 @@ set autoindent
  " always set autoindenting on
 set copyindent
  " copy the previous indentation on autoindenting
+
+" show tabs and spaces
+set list
+set listchars=eol:¬,tab:->,space:·
+hi SpecialKey ctermfg=grey guifg=grey70
+
