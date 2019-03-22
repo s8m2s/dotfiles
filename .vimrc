@@ -8,8 +8,8 @@ endif
 " Install Vim Plug Plugins 
 call plug#begin('~/.vim/plugged')
 
-#Plug 'airblade/vim-gitgutter'
-#Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-fugitive'
 Plug 'sgur/vim-editorconfig'
 call plug#end()
 
