@@ -8,8 +8,9 @@ endif
 " Install Vim Plug Plugins 
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+#Plug 'airblade/vim-gitgutter'
+#Plug 'tpope/vim-fugitive'
+Plug 'sgur/vim-editorconfig'
 call plug#end()
 
 " turn hybrid line numbers on
@@ -20,8 +21,6 @@ call plug#end()
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
-
-:set tabstop=4
 
 " statusline
 function! GitBranch()
@@ -36,9 +35,9 @@ endfunction
 " Generate a statusline flag for expandtab.                                                    
 function! ExpandTabFlag()                                                                      
   if &expandtab == 0                                                                           
-    return "Tab Size:"                                                                                  
+    return "Tab Size"                                                                                  
   else                                                                                         
-    return "Spaces:"                                                                                 
+    return "Spaces"                                                                                 
   endif                                                                                        
 endfunction         
 
