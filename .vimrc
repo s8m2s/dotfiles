@@ -69,7 +69,7 @@ set statusline+=%=
 set statusline+=%{TabStopStatus()}
 set statusline+=\ %y
 set statusline+=\ %l/%L:%c
-set statusline+=\
+set statusline+=\ 
 
 " tab -> spaces
 set expandtab
