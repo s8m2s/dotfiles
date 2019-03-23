@@ -66,7 +66,6 @@ set statusline+=%{StatuslineGit()}
 set statusline+=\ %f
 set statusline+=%m
 set statusline+=%=
-set statusline+=%#CursorColumn#
 set statusline+=%{TabStopStatus()}
 set statusline+=\ %y
 set statusline+=\ %l/%L:%c
