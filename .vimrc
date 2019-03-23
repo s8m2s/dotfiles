@@ -35,9 +35,9 @@ endfunction
 " Generate a statusline flag for expandtab.
 function! ExpandTabFlag()
   if &expandtab == 0
-    return "Tab Size"
+    return "Tab Size:"
   else
-    return "Spaces"
+    return "Spaces:"
   endif
 endfunction
 
