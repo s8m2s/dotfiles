@@ -86,5 +86,5 @@ set copyindent
 " show tabs and spaces
 set list
 set listchars=eol:¬,tab:->,space:·
-hi SpecialKey ctermfg=grey guifg=grey70
+highlight SpecialKey ctermfg=252
 
