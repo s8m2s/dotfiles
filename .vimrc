@@ -88,3 +88,7 @@ set list
 set listchars=eol:¬,tab:->,space:·
 highlight SpecialKey ctermfg=252
 
+"remove vertical split col
+set fillchars+=vert:\ 
+highlight VertSplit cterm=none ctermfg=white ctermbg=none
+
