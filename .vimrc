@@ -53,19 +53,21 @@ function! TabStopStatus()
   return str
 endfunction
 
-
+" Status line
+" default: set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
+set t_Co=256
 set laststatus=2
 set statusline=
-set statusline+=%#PmenuSel#
+set statusline+=\ %<%F%m%r%h%w\ 
 set statusline+=%{StatuslineGit()}
-set statusline+=\ %f
-set statusline+=%m
 set statusline+=%=
 set statusline+=%{TabStopStatus()}
 set statusline+=\ %y
 set statusline+=\ %l/%L:%c
 set statusline+=\ 
 
+highlight StatusLine cterm=none  ctermfg=240 ctermbg=253
+highlight StatusLineNC cterm=none ctermfg=245 ctermbg=254
 " tab -> spaces
 set expandtab
 " a tab is 4 spaces
