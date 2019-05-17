@@ -15,7 +15,7 @@ call plug#end()
 
 " turn hybrid line numbers on
 :set number relativenumber
-highlight LineNr ctermfg=240 ctermbg=254
+highlight LineNr ctermfg=NONE ctermbg=NONE
 
 " statusline
 function! GitBranch()
@@ -86,7 +86,7 @@ set copyindent
 " show tabs and spaces
 set list
 set listchars=eol:¬,tab:->,space:·
-highlight SpecialKey ctermfg=252
+highlight SpecialKey ctermfg=240
 
 "remove vertical split col
 set fillchars+=vert:\ 
