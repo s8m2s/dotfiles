@@ -1,0 +1,70 @@
+# ~/.zshrc — Orchard
+# Backup of the previous version: ~/Projects/mac-setup/backups/zshrc-2026-11-10.bak
+# Change log: ~/Projects/mac-setup/CHANGELOG.md
+
+# ── Shell basics ─────────────────────────────────────────────
+# Keep PATH entries unique, even if a line adds one twice.
+typeset -U path PATH
+
+# ── PATH ─────────────────────────────────────────────────────
+# User binaries: claude, uv's python/python3.
+export PATH="$HOME/.local/bin:$PATH"
+
+# ── History ──────────────────────────────────────────────────
+# Large history, shared live across tabs, no duplicates.
+# Commands typed with a leading space are not saved.
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE
+
+# ── Completion ───────────────────────────────────────────────
+# Include completions installed by Homebrew (uv, fzf, etc.).
+if [[ -d /opt/homebrew/share/zsh/site-functions ]]; then
+  fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+fi
+autoload -Uz compinit && compinit
+# Case-insensitive matching, and a menu you can arrow through.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
+# ── Editor ───────────────────────────────────────────────────
+# Set micro as the default editor (git commit, crontab, etc.) only if it's installed.
+if command -v micro >/dev/null; then
+  export EDITOR=micro
+  export VISUAL=micro
+fi
+
+# ── Aliases ──────────────────────────────────────────────────
+alias ll='ls -lAhG'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
+alias glog='git log --oneline --graph --decorate --all'
+
+# ── Node (nvm) ───────────────────────────────────────────────
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ── Fuzzy search (fzf) ───────────────────────────────────────
+# Ctrl+R history, Ctrl+T files, cd **<Tab> folders. Plain cd is unchanged.
+command -v fzf >/dev/null && source <(fzf --zsh)
+
+# ── Plugins ──────────────────────────────────────────────────
+# Grey suggestions from history as you type (→ to accept).
+# Prefer suggestions that fit the current context, then fall back to real completions.
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+[[ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# ── Prompt (Starship) ────────────────────────────────────────
+command -v starship >/dev/null && eval "$(starship init zsh)"
+
+# ── Syntax highlighting (must be last) ───────────────────────
+# Colours commands as you type: green = valid, red = not found.
+[[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
