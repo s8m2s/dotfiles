@@ -68,3 +68,8 @@ command -v starship >/dev/null && eval "$(starship init zsh)"
 # Colours commands as you type: green = valid, red = not found.
 [[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/scott/.lmstudio/bin"
+# End of LM Studio CLI section
+
