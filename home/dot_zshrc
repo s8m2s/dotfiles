@@ -73,3 +73,6 @@ command -v starship >/dev/null && eval "$(starship init zsh)"
 export PATH="$PATH:/Users/scott/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# Added by Cap
+export PATH="/Users/scott/.cap/bin:$PATH"
