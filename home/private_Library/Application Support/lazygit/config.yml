@@ -1,0 +1,13 @@
+# lazygit config (managed by chezmoi)
+# Docs: https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+gui:
+  # Show files as a tree in the file views (backtick toggles it)
+  showFileTree: true
+  # Mouse support (this is also lazygit's default)
+  mouseEvents: true
+git:
+  # delta renders diffs. `diffRenderers` replaced the old `git.paging` setting.
+  # See docs/Custom_DiffRenderers.md in the lazygit repo.
+  diffRenderers:
+    - command: delta --dark --paging=never
+      colorArg: always

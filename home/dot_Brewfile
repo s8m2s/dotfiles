@@ -1,32 +1,49 @@
-# ~/.Brewfile — Homebrew packages for this Mac (managed by chezmoi)
-# Install everything: brew bundle --global
-# Check:              brew bundle check --global
-
-# ── Shell ────────────────────────────────────────────────────
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Text editor for your terminal: easy, powerful and fast
+brew "fresh-editor"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Sudoless performance monitoring for Apple Silicon processors
+brew "macmon"
 # Modern and intuitive terminal-based text editor
 brew "micro"
+# Simple text editor with clickable interface
+brew "msedit"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Swift native on-device speech recognition with Whisper for Apple Silicon
+brew "whisperkit-cli"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-
-# ── Dev tools ────────────────────────────────────────────────
-# Manage your dotfiles across multiple diverse machines, securely
-brew "chezmoi"
-# Extremely fast Python package installer and resolver, written in Rust
-brew "uv"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
-
-# ── VS Code extensions ───────────────────────────────────────
 vscode "anthropic.claude-code"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.remote-server"
+uv "mlx-whisper"
+uv "parakeet-mlx"

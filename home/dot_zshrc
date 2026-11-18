@@ -44,6 +44,7 @@ alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
 alias glog='git log --oneline --graph --decorate --all'
+alias lg='lazygit'
 
 # ── Node (nvm) ───────────────────────────────────────────────
 export NVM_DIR="$HOME/.nvm"
